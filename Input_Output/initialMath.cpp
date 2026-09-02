@@ -3,14 +3,14 @@
 
 using namespace std;
 
-int main()
+int Anothermain()
 {
     int numToDeploy;
     int extraCountermeasures = 3;
     int totalDeployed = 999999;
     int incomingAntiSat = 5;
     float countermeasureEffectiveness = 0.7352f;
-    double antiSatCountermeasureAvoidanceRating = 0.523;
+   // double antiSatCountermeasureAvoidanceRating = 0.523;
     float antiSatIntercepted;
     float totalIntercepted;
     cout << "How many satellites would you like to deploy?";
