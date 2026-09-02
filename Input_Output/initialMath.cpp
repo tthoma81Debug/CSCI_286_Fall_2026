@@ -8,7 +8,11 @@ int main()
     int numToDeploy;
     int extraCountermeasures = 3;
     int totalDeployed = 999999;
-    float countermeasureEffectiveness = 0.7352;
+    int incomingAntiSat = 5;
+    float countermeasureEffectiveness = 0.7352f;
+    double antiSatCountermeasureAvoidanceRating = 0.523;
+    float antiSatIntercepted;
+    float totalIntercepted;
     cout << "How many satellites would you like to deploy?";
     cin >> numToDeploy;
 
@@ -21,12 +25,24 @@ int main()
     //extraCountermeasures = extraCountermeasures + 1;
     extraCountermeasures++;
 
+    
 
     totalDeployed = numToDeploy + extraCountermeasures;
 
+    totalIntercepted = extraCountermeasures * countermeasureEffectiveness;
+
+    antiSatIntercepted = incomingAntiSat - totalIntercepted;
+ 
     cout << "Roger that. Deploying " << numToDeploy << " satellites \n";
     cout << "Auto deploying " << extraCountermeasures << " to protect from anti satellite weaponry \n";
     cout << "Total deployed: " << totalDeployed;
-    cout << "And this was added to show Github Working";
+
+    cout << "\n Incoming Anti Sat! " << incomingAntiSat << " projectiles!. Engaging with " << extraCountermeasures << " countermeasures \n"; 
+    cout << "We have capacity to intercept " << totalIntercepted << "\n";
+    cout <<"Interception! " << antiSatIntercepted << " anti sat projectiles intercepted \n";
+
+
+
+
     return 0;
 }
