@@ -27,5 +27,6 @@ int main()
     cout << "Roger that. Deploying " << numToDeploy << " satellites \n";
     cout << "Auto deploying " << extraCountermeasures << " to protect from anti satellite weaponry \n";
     cout << "Total deployed: " << totalDeployed;
+    cout << "And this was added to show Github Working";
     return 0;
 }
