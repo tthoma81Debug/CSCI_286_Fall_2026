@@ -6,21 +6,26 @@ int main()
 {
     int userSuppliedTotalSeconds;
     int minutes;
+    int leftoverSeconds;
     string minutesString;
+    string secondsString;
+    string outputString;
 
     cout << "Please enter the countdown timer amount in seconds. \n";
     cin >> userSuppliedTotalSeconds;
 
     minutes = userSuppliedTotalSeconds / 60;
+    leftoverSeconds = userSuppliedTotalSeconds % 60;
 
     minutesString = to_string(minutes);
-    minutesString += " Minutes Remaining";
-    //minutesString = minutes;
-    // + " Minutes Total";
-    
+    secondsString = to_string(leftoverSeconds);
 
+    minutesString += " Minutes Remaining. ";
+    secondsString += " Seconds Remaining";
 
-    cout << minutesString;
+    outputString = minutesString + secondsString;
+
+    cout << outputString;
 
     return 0;
 }
