@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -36,6 +37,11 @@ int main()
 
     //cout << endl;
     //cout << "\n";
+
+
+    double cubedNumber = pow(3, 2);
+    cout << " \n";
+    cout << cubedNumber;
 
     return 0;
 }
