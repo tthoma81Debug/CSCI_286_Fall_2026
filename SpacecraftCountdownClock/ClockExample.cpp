@@ -8,6 +8,7 @@ int main()
     int minutes;
     int hours;
     int leftoverSeconds;
+    int leftoverMinutes;
     string minutesString;
     string secondsString;
     string outputString;
@@ -18,23 +19,23 @@ int main()
 
     minutes = userSuppliedTotalSeconds / 60;
     hours = (userSuppliedTotalSeconds / 60) / 60;
+    leftoverMinutes = (minutes % 60);
     leftoverSeconds = userSuppliedTotalSeconds % 60;
 
     hoursString = to_string(hours);
-    minutesString = to_string(minutes);
+    minutesString = to_string(leftoverMinutes);
     secondsString = to_string(leftoverSeconds);
 
+    hoursString  += " Hours Remaining. ";
     minutesString += " Minutes Remaining. ";
     secondsString += " Seconds Remaining";
 
-    outputString = minutesString + secondsString;
+    outputString = hoursString + minutesString + secondsString;
 
     cout << outputString;
 
     //cout << endl;
-    cout << "\n";
-
-    cout << "hours is " + hoursString;
+    //cout << "\n";
 
     return 0;
 }
