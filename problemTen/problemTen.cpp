@@ -24,6 +24,16 @@ int main()
     doubleAltitude += 0.2;
     doubleAltitude += 0.2;
 
+    float changeFloat = floatAltitude - floatAltitudeCopy;
+    double changeDouble = doubleAltitude - doubleAltitudeCopy;
+
+    cout << fixed << setprecision(20);
+
+    cout << "Starting Float Value " << floatAltitudeCopy << "\n";
+    cout << "Final Float Value " << floatAltitude << "\n";
+    cout << "Change measured by the float" << changeFloat << "\n";
+    cout << "Change measured by the double" << changeDouble << "\n";
+
 
 
     return 0;
