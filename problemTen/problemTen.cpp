@@ -33,8 +33,8 @@ int main()
     cout << "Final Float Value " << floatAltitude << "\n";
     cout << "Starting Double Value " << doubleAltitudeCopy << "\n";
     cout << "Final Double Value " << doubleAltitude << "\n";
-    cout << "Change measured by the float" << changeFloat << "\n";
-    cout << "Change measured by the double" << changeDouble << "\n";
+    cout << "Change measured by the float " << changeFloat << "\n";
+    cout << "Change measured by the double " << changeDouble << "\n";
     cout << "Expected Change " << "1.0" << "\n";
 
 
