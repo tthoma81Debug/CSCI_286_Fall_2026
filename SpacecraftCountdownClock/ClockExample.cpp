@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -43,10 +44,18 @@ int main()
     double cubedNumber = pow(3, 2);
     double squareRootNumber = sqrt(numberToSquare);
     double raisedNumber = ceil(numberToRaise);
+    double roundedNumber = round(numberToRaise);
+    double val = 3.19322;
+
     cout << " \n";
     cout << cubedNumber;
     cout << " and square root number is " << squareRootNumber;
     cout << " and raised number is " << raisedNumber;
+    cout << " and rounded number is " << roundedNumber;
+
+    // Formatting display to 2 decimal places
+    cout << fixed << setprecision(30);
+    cout << "Formatted output: " << val << endl; // 4.12
 
     return 0;
 }
