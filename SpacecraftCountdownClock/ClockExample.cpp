@@ -38,10 +38,15 @@ int main()
     //cout << endl;
     //cout << "\n";
 
-
+    double numberToSquare = 100;
+    double numberToRaise = 3.2;
     double cubedNumber = pow(3, 2);
+    double squareRootNumber = sqrt(numberToSquare);
+    double raisedNumber = ceil(numberToRaise);
     cout << " \n";
     cout << cubedNumber;
+    cout << " and square root number is " << squareRootNumber;
+    cout << " and raised number is " << raisedNumber;
 
     return 0;
 }
