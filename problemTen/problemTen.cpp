@@ -12,17 +12,17 @@ int main()
     float floatAltitudeCopy = 250000.0f;
     double doubleAltitudeCopy = 250000.0;
 
-    floatAltitude += 2;
-    floatAltitude += 2;
-    floatAltitude += 2;
-    floatAltitude += 2;
-    floatAltitude += 2;
+    floatAltitude += 0.2;
+    floatAltitude += 0.2;
+    floatAltitude += 0.2;
+    floatAltitude += 0.2;
+    floatAltitude += 0.2;
 
-    doubleAltitude += 2;
-    doubleAltitude += 2;
-    doubleAltitude += 2;
-    doubleAltitude += 2;
-    doubleAltitude += 2;
+    doubleAltitude += 0.2;
+    doubleAltitude += 0.2;
+    doubleAltitude += 0.2;
+    doubleAltitude += 0.2;
+    doubleAltitude += 0.2;
 
 
 
