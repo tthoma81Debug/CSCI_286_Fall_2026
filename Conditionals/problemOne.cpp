@@ -14,9 +14,13 @@ int main()
     {
         sayThisString = "Eligible for the service team";
     }
+    else if(completedServiceHours < 0) 
+    {
+        sayThisString = "Hang on...you worked negative hours? how is this this possible?.";
+    }
     else
     {
-        sayThisString = "More service hours needed";
+         sayThisString = "More service hours needed";//logic here
     }
     
 
