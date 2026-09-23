@@ -18,8 +18,6 @@ int main()
     cout <<"Enter the valu of 'c'in the quadratic equation \n";
     cin >> c_variable;
 
-    cout <<"test" << b_variable << " " << c_variable;
-
     discriminant = pow(b_variable, 2) - (4 * a_variable * c_variable);
 
     if(a_variable == 0)
@@ -55,6 +53,10 @@ int main()
     else if(discriminant == 0)
     {
         //calculate and print the one real solution
+        double x = -b_variable / (2 * a_variable);
+        cout << "One real solution\n";
+        cout << "x = " << x << '\n';
+
     }
     else if (discriminant < 0)
     {
