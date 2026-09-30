@@ -25,6 +25,7 @@ int main()
     else
     {
         //reject starting value
+        cout << "that number is less than 1. rejected \n"; 
     }
 
     
