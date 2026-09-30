@@ -12,7 +12,12 @@ int main()
     if(samplesToGenerate >= 1 && samplesToGenerate <=20)
     {
        //can proceed
-        
+
+       //for loops would look like
+       for(int i = 0; i < 20; i++) //will change
+       {
+        //change for loop logic
+       }
 
 
     }
