@@ -18,14 +18,15 @@ int main()
         }
         else
         {
-             totalAmount += litersBeingAdded;
+            totalAmount += litersBeingAdded;
+            cout <<"Thanks! Running total is now " << totalAmount << "\n";
         }
 
        
     }
     while(totalAmount <= 50);
 
-
+    cout << "Tank is ready! \n";
 
     return 0;
 }
