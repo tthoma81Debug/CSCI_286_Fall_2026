@@ -51,8 +51,12 @@ int main()
                 cout <<"uh oh. in else block";
             }
 
+       } //end of for loop
 
-       }
+       cout << "Finished. \n";
+       cout << "Total Acids " << totalAcids << "\n";
+       cout << "Total Neutrals " << totalNeutrals << "\n";
+       cout << "Total Bases " << totalBases << "\n";
 
 
     }
