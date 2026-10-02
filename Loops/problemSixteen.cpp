@@ -4,11 +4,16 @@ using namespace std;
 
 int main()
 {
-    int day = 1;
 
     for(int week = 1; week < 5; week++)
     {
-        cout << "Week " << week << " Day " << day << "\n";
+        
+
+        for(int day = 1; day < 8; day++)
+        {
+            //inner loop
+            cout << "Week " << week << " Day " << day << "\n";
+        }
     }
    
 
