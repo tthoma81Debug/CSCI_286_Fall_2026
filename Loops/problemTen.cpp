@@ -1,10 +1,15 @@
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
 int main()
 {
     int samplesToGenerate;
+    int raw_random;
+    int random_one;
+
+    srand(time(nullptr));
 
     cout << "How many samples should be generated \n";
     cin >> samplesToGenerate;
@@ -14,9 +19,11 @@ int main()
        //can proceed
 
        //for loops would look like
-       for(int i = 0; i < 20; i++) //will change
+       for(int i = 0; i < samplesToGenerate; i++) //will change
        {
-        //change for loop logic
+            //change for loop logic
+            raw_random = rand();
+            random_one = raw_random % 15;
        }
 
 
