@@ -11,7 +11,7 @@ int main()
 
     for(int i =0; i < 12; i++)
     {
-        cout <<"Please enter the claim code for item " << (i+1);
+        cout <<"Please enter the claim code for item " << (i+1) <<"\n";
         cin >> claimCodes[i];
     }
 
@@ -19,15 +19,21 @@ int main()
     cout << "Please enter the claim code of the item you are looking for \n";
     cin >> codeSearchingFor;
 
-    if(codeSearchingFor == claimCodes[0])
+    for(int i = 0; i < 12; i++)
     {
-        cout << "Claim Code Found! At location " << (0 + 1);
+
+    if(codeSearchingFor == claimCodes[i])
+    {
+        cout << "Claim Code Found! At location " << (i + 1);
         searchSuccess = true;
+        break;
     }
     else
     {
         //code at this spot doesn't match.
     }
+
+    } //end loop
 
     if(searchSuccess == true)
     {
