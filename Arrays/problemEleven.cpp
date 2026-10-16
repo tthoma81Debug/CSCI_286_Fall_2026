@@ -7,6 +7,7 @@ int main()
 {
     double challengeTimes[8];
     double currentLowest;
+    int lowestScoreTeamNumber;
 
     for(int i = 0; i < 8; i++)
     {
@@ -14,12 +15,10 @@ int main()
         cin >> challengeTimes[i];
     }
 
-
-
-
     //find lowest challenge time
     //assume first we see is lowest
     currentLowest = challengeTimes[0];
+    lowestScoreTeamNumber = 0;
 
 
     for(int i =1; i < 8; i++)
@@ -27,12 +26,21 @@ int main()
         if(currentLowest > challengeTimes[i])
         {
             currentLowest = challengeTimes[i];
+            lowestScoreTeamNumber = i;
         }
     }
 
+    
+
+
+
+
+
+
+
     //now we have the lowest
     cout <<"Lowest Challenge Time: " << currentLowest << "\n";
-
+    cout <<"And that score is from team " << (lowestScoreTeamNumber + 1) << "\n";
 
 
 
