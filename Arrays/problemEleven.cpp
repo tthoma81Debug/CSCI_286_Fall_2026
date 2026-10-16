@@ -7,7 +7,9 @@ int main()
 {
     double challengeTimes[8];
     double currentLowest;
+    double currentHighest;
     int lowestScoreTeamNumber;
+    int highestScoreTeamNumber;
 
     for(int i = 0; i < 8; i++)
     {
@@ -30,7 +32,20 @@ int main()
         }
     }
 
-    
+    //find highest challenge time
+    //assume first we see is highest
+    currentHighest = challengeTimes[0];
+    highestScoreTeamNumber = 0;
+
+
+    for(int i =1; i < 8; i++)
+    {
+        if(currentHighest < challengeTimes[i])
+        {
+            currentHighest = challengeTimes[i];
+            highestScoreTeamNumber = i;
+        }
+    }
 
 
 
@@ -41,6 +56,10 @@ int main()
     //now we have the lowest
     cout <<"Lowest Challenge Time: " << currentLowest << "\n";
     cout <<"And that score is from team " << (lowestScoreTeamNumber + 1) << "\n";
+
+    //and highest
+    cout <<"Highest Challenge Time: " << currentHighest << "\n";
+    cout <<"And that score is from team " << (highestScoreTeamNumber + 1) << "\n";
 
 
 
