@@ -10,6 +10,8 @@ int main()
     double currentHighest;
     int lowestScoreTeamNumber;
     int highestScoreTeamNumber;
+    int scoreSum = 0;
+    double average;
 
     for(int i = 0; i < 8; i++)
     {
@@ -48,8 +50,14 @@ int main()
     }
 
 
+    //average = all values added up / total number of values
 
+    for(int i = 0; i < 8; i++)
+    {
+        scoreSum += challengeTimes[i];
+    }
 
+    average = scoreSum / 8.0;
 
 
 
@@ -61,7 +69,8 @@ int main()
     cout <<"Highest Challenge Time: " << currentHighest << "\n";
     cout <<"And that score is from team " << (highestScoreTeamNumber + 1) << "\n";
 
-
+    //and average
+    cout <<"Average Challenge Time: " << average << "\n";
 
 
 
