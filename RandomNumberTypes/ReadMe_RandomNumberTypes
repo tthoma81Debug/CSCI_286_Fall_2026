@@ -1,0 +1,99 @@
+Compile Command for RandomArrays.cpp:
+g++ -std=c++17 -Wall -Wextra RandomArrays.cpp -o hello.exe -lbcrypt
+
+Run Command for RandomArrays.cpp
+./hello.exe
+
+Rest of File for Visual Example:
+compile command:
+g++ -std=c++17 -O2 -Wall -Wextra "C:\WorkSpace\CSCI_286_Fall_2026\RandomNumberTypes\randomNumberTypes.cpp" -I"C:\WorkSpace\CPlusPlus_Outside_Repository\raylib\include" -I"C:\WorkSpace\CPlusPlus_Outside_Repository\libsodium\include" "C:\WorkSpace\CPlusPlus_Outside_Repository\raylib\lib\libraylib.a" "C:\WorkSpace\CPlusPlus_Outside_Repository\libsodium\lib\libsodium.dll.a" -lopengl32 -lgdi32 -lwinmm -o "C:\WorkSpace\CSCI_286_Fall_2026\RandomNumberTypes\RandomDemo.exe"
+
+The relevant paths are:
+Purpose	Path
+Source	C:\WorkSpace\CSCI_286_Fall_2026\RandomNumberTypes\randomNumberTypes.cpp
+raylib headers	C:\WorkSpace\CPlusPlus_Outside_Repository\raylib\include
+libsodium headers	C:\WorkSpace\CPlusPlus_Outside_Repository\libsodium\include
+Output program	C:\WorkSpace\CSCI_286_Fall_2026\RandomNumberTypes\RandomDemo.exe
+
+Run Command:
+& "C:\WorkSpace\CSCI_286_Fall_2026\RandomNumberTypes\RandomDemo.exe"
+
+Demonstration Sequence:
+1. Start with the **pink clock-reseeded panel** and its long repeated runs.
+2. Compare the cyan and green histograms: their appearance alone does not identify which is secure.
+3. Press **P** repeatedly: the two deterministic replays remain exact.
+4. Point out that the green row is an **independent draw**, not an attempted prediction.
+5. Explain the bottom-line counterexample: **even a cryptographic generator repeats when its complete seed is deliberately reused**. ([libsodium.gitbook.io](https://libsodium.gitbook.io/doc/generating_random_data?utm_source=openai))
+6. Press **S** to distinguish distribution shape from differences in vertical scale.
+
+
+Randomness Lab
+A visual comparison of three ways to generate random-looking numbers—and why looking random is not the same as being unpredictable.
+
+Each panel contains 10,000 integers from 0 through 99, stored in a one-dimensional array.
+
+The three generators
+Pink: Clock-reseeded — deliberately bad
+On every loop iteration, this generator reads the current time in milliseconds and uses it as the seed for a simple calculation.
+
+Computers can execute many iterations within one millisecond, so the same seed is reused repeatedly. Same seed, same calculation, same result. This produces large spikes and long runs of identical values.
+
+The replay uses the recorded seed for each iteration. If the clock advanced during generation, reproducing the entire sequence requires that seed schedule—not just the starting timestamp.
+
+Cyan: Mersenne Twister — statistical, not secure
+This panel uses std::mt19937, seeded once, along with a uniform integer distribution.
+
+Its output should be approximately evenly distributed, making it useful for many simulations and other non-security applications. However, anyone who knows the seed and uses the same implementation can reproduce the sequence.
+
+The demonstration deliberately uses the public seed 5489, so its replay matches every value.
+
+Green: Operating-system secure randomness
+This panel uses libsodium to obtain cryptographically secure randomness through the operating system. Its range-conversion function avoids introducing modulo bias.
+
+The operating system manages entropy collection and protected cryptographic generator state. Depending on the platform, entropy inputs can include hardware randomness and unpredictable event timing. This is not necessarily a fresh physical measurement of “chaos” for every number.
+
+The second green row is a fresh independent draw, not a prediction.
+
+Reading the displays
+Histograms
+Each bar represents one possible value, from 0 to 99. Its height shows how often that value occurred.
+
+The dashed line marks 100 occurrences: the expected average for 10,000 uniformly distributed samples across 100 values. Random samples naturally fluctuate around this line; perfect equality is not expected.
+
+By default, each panel has its own vertical scale so its shape is easy to inspect. Press S to use a common scale for direct magnitude comparisons.
+
+Order plots
+The small scatter plots show adjacent pairs:
+
+Horizontal position: value[i]
+Vertical position: value[i+1]
+These help reveal ordering patterns that a histogram can hide. Repeated pairs overlap, so the plots do not show how many times each point occurred.
+
+Statistics
+Occupied bins: How many of the 100 possible values appeared.
+Longest run: The longest uninterrupted sequence of identical values.
+Peak count: The largest histogram bar.
+These are descriptive measurements, not tests that prove randomness or security.
+
+Original and replay rows
+Each panel displays its first eight stored values alongside replayed values—or, for the secure panel, newly drawn values.
+
+The replay count compares all 10,000 positions, not just the preview. Independent uniform draws should match at about 1% of positions by chance.
+
+The key security lesson
+A cryptographic pseudorandom generator is also deterministic when its complete seed/state is known.
+
+The footer demonstrates this by deliberately giving a cryptographic generator the same public seed twice: its output repeats exactly.
+
+Secure generation relies on a suitable algorithm, sufficient entropy, and protected internal state. Neither a good-looking histogram nor a different second sequence proves security.
+
+Also, a single number from 0 to 99 is far too small to serve as a secret key; this range is only for visualization.
+
+Controls
+Key	Action
+P	Repeat replay comparisons without changing the original data
+R	Regenerate the data; Mersenne Twister repeats because its seed stays fixed
+S	Toggle independent/common histogram scales
+Space	Pause or resume decorative animation
+Esc	Exit
+The neon glow, moving scanner, background particles, and bar entrance animation are decorative. They do not consume or modify the experimental random streams.
