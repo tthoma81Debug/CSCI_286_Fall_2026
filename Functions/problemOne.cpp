@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 void printWelcome()
 {
     cout << "BLUE RIDGE BEACON \n";
@@ -14,3 +15,4 @@ int main()
     cout << "Planning console ready.";
     return 0;
 }
+
