@@ -9,10 +9,15 @@ int getDailyGoal()
 
 int main()
 {
-    int theNumber = 0;
-    theNumber = getDailyGoal();
+    int goal = 0;
+    int stillNeeded;
+    int completedGoals;
+    goal = getDailyGoal();
 
-    cout << theNumber;
+    cout << "How many kits have already been completed (0 - 24)\n";
+    cin >> completedGoals;
+
+   
 
     return 0;
 }
