@@ -1,4 +1,3 @@
-#define and #endif:
 #ifndef INSPECTION_FUNCTIONS_H
 #define INSPECTION_FUNCTIONS_H
 
