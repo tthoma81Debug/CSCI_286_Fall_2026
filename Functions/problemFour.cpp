@@ -15,15 +15,21 @@ int main()
 {
     int kitCount;
     double kitPrice;
-    double kitCost;
+    double subtotal;
+    double deliveryCharge = 12.0;
+    double total;
+
     cout <<"Please enter a kit count (0 through 100) \n";
     cin >> kitCount;   
     cout <<"Please enter a price per kit ($0 through $25) \n";
     cin >> kitPrice;
 
-    kitCost = calculateKitCost(kitCount, kitPrice);
+    subtotal = calculateKitCost(kitCount, kitPrice);
+    total = subtotal + deliveryCharge;
 
-    
+    cout << "Subtotal: " << subtotal << "\n";
+    cout << "Total: " << total << "\n";
+
 
     return 0;
 }
