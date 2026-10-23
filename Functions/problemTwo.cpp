@@ -17,6 +17,11 @@ int main()
     cout << "How many kits have already been completed (0 - 24)\n";
     cin >> completedGoals;
 
+    stillNeeded = goal - completedGoals;
+
+    cout << "the goal is " << goal << "\n";
+    cout << stillNeeded << " kits still needed";
+
    
 
     return 0;
