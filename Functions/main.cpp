@@ -12,5 +12,7 @@ int main()
 
 double estimateRuntime(double wattHours, double watts)
 {
-    return 0.5;
+    double runtimeEstimate;
+    runtimeEstimate = (watts - wattHours) / watts;
+    return runtimeEstimate;;
 }
