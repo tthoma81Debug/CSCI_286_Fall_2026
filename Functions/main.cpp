@@ -9,6 +9,7 @@ int main()
     double watts;
     double storedEnergy;
     double runtime;
+    double energyNeeded;
     cout << "Please enter stored energy. 0 through 1000 watt hours \n";
     cin >> storedEnergy;
 
@@ -16,6 +17,7 @@ int main()
     cin >> watts;
 
     runtime = estimateRuntime(storedEnergy, watts);
+    energyNeeded = calculateEnergyNeeded(watts, 6);
 
     cout <<"runtime is " << runtime << "\n";
 
@@ -31,9 +33,3 @@ int main()
     return 0;
 }
 
-double estimateRuntime(double wattHours, double watts)
-{
-    double runtimeEstimate;
-    runtimeEstimate = wattHours / watts;
-    return runtimeEstimate;;
-}

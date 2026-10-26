@@ -3,5 +3,6 @@
 
 // Header contents go here
 double estimateRuntime(double wattHours, double watts);
+double calculateEnergyNeeded(double watts, double hours);
 
 #endif
