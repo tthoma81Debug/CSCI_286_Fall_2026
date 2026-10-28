@@ -11,8 +11,12 @@ int main()
 
     int enteredHubID;
     int searchResult;
+    int kitsToReserve = -1;
     cout << "Please enter a Hub ID \n";
     cin >> enteredHubID;
+
+
+
 
     //debugging code
     searchResult = findHub(hubIDArray, 5, enteredHubID);
@@ -22,7 +26,12 @@ int main()
     }
     else
     {
-        cout << enteredHubID << "found at position " << searchResult;
+        //if we found it. ask how many kits to reserve
+        cout << enteredHubID << " found at position " << searchResult << "\n";
+        cout <<"How many kits do you want to reserve? \n";
+        cin >> kitsToReserve;
+
+        reserveKits(kitCounts[searchResult], kitsToReserve);
     }
 
     return 0;
