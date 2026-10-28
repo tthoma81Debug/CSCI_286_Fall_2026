@@ -10,9 +10,20 @@ int main()
     int kitCounts[] = {18,   9,  24,   0,  13};
 
     int enteredHubID;
+    int searchResult;
     cout << "Please enter a Hub ID \n";
     cin >> enteredHubID;
 
-    
+    //debugging code
+    searchResult = findHub(hubIDArray, 5, enteredHubID);
+    if(searchResult == -1)
+    {
+        cout << enteredHubID << " not found \n";
+    }
+    else
+    {
+        cout << enteredHubID << "found at position " << searchResult;
+    }
+
     return 0;
 }
