@@ -33,11 +33,25 @@ int main()
     kitCount[2] = 6;
     kitCount[3] = 10;
     int startingTotal;
+    int extraAmount;
+    int endingTotal;
 
     startingTotal = calculateTotalKits(kitCount, 4);
 
     cout << "Starting total is " << startingTotal << "\n";
+    cout << "Please enter extra amount (0 - 10) kits per hub " << "\n";
+    cin >> extraAmount;
 
+    addReserveKits(kitCount, 4, extraAmount);
+
+    for(int i = 0; i < 4; i++)
+    {
+        cout << "Array at spot " << i << " has " << kitCount[i];
+    }
+
+    endingTotal = calculateTotalKits(kitCount, 4);
+
+    cout <<"Ending total is " << endingTotal;
 
     return 0;
 }
