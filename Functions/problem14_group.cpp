@@ -46,12 +46,12 @@ int main()
 
     for(int i = 0; i < 4; i++)
     {
-        cout << "Array at spot " << i << " has " << kitCount[i];
+        cout << "\n Array at spot " << i << " has " << kitCount[i];
     }
 
     endingTotal = calculateTotalKits(kitCount, 4);
 
-    cout <<"Ending total is " << endingTotal;
+    cout <<"\n Ending total is " << endingTotal;
 
     return 0;
 }
