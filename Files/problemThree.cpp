@@ -29,7 +29,9 @@ int main() {
     {
         output << batteryCharge[i] << "\n";
     }
-    
+
+    output.close();
+    cout << "File Created \n";
 
 
 
