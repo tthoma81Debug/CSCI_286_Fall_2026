@@ -34,6 +34,10 @@ int main() {
     ifstream input("battery_scan.txt");
     string lineFromBatteryScan;
 
+    int amountLowBatteries = 0;
+    int amountReadyBatteries = 0;
+    int amountInvalidBatteries = 0;
+
     //check to make sure we actually found the file.
     if (!input) {
         cout << "Could not open battery_scan.txt\n";
@@ -49,6 +53,7 @@ int main() {
         if(convertedBatteryScanLine > 100 || convertedBatteryScanLine < 0)
         {
             cout << "Invalid battery charge. not writing to file \n";
+            amountInvalidBatteries++;
             continue;
         }
         else
@@ -59,11 +64,13 @@ int main() {
             {
                 //goes to charged battery file
                 batteryStatusWrite(1, convertedBatteryScanLine);
+                amountReadyBatteries++;
             }
             else if (convertedBatteryScanLine < 60 && convertedBatteryScanLine >= 0)
             {
                 //goes to low battery file
                 batteryStatusWrite(0, convertedBatteryScanLine);
+                amountLowBatteries++;
             }
             else
             {
@@ -76,10 +83,11 @@ int main() {
 
 
 
-    }
+    } //end loop
 
-
-
+    cout << amountReadyBatteries << " batteries ready \n";
+    cout << amountLowBatteries << " low batteries \n";
+    cout << amountInvalidBatteries << " messed up batteries \n";
 
     input.close();
 
