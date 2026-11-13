@@ -17,7 +17,7 @@ void batteryStatusWrite(int batteryType, int batteryCharge)
         fileToWrite = "low_batteries.txt";
     }
 
-    ofstream output(fileToWrite);
+    ofstream output(fileToWrite, ios::app);
         if (!output) {
         cout << "Could not open file for writing. error.\n";
     }
@@ -41,7 +41,7 @@ int main() {
     }
 
     //if we get this far... then lets read the first line
-    if (getline(input, lineFromBatteryScan)) {
+    while (getline(input, lineFromBatteryScan)) {
         cout << lineFromBatteryScan << '\n';
         int convertedBatteryScanLine;
         convertedBatteryScanLine = stoi(lineFromBatteryScan);
@@ -49,7 +49,7 @@ int main() {
         if(convertedBatteryScanLine > 100 || convertedBatteryScanLine < 0)
         {
             cout << "Invalid battery charge. not writing to file \n";
-            return 1;
+            continue;
         }
         else
         {
