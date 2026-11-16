@@ -1,0 +1,9 @@
+sighting_id,timestamp,camera_id,location,plate_read,vehicle_type,color
+1,2026-04-06T08:00:00,C001,North_Bridge,BH00421,Sedan,Blue
+2,2026-04-06T08:10:00,C002,Market_Square,BH00817,Pickup,White
+3,2026-04-06T08:20:00,C002,Market_Square,BH00421,Sedan,Blue
+4,2026-04-06T08:40:00,C003,East_Road,BH00421,Sedan,Blue
+5,2026-04-06T09:00:00,C001,North_Bridge,BH00817,Pickup,White
+6,2026-04-06T12:00:00,C004,West_Park,BH00421,Sedan,Blue
+7,2026-04-06T16:00:00,C003,East_Road,BH00421,Sedan,Blue
+8,2026-04-06T18:00:00,C005,South_Junction,BH00421,Sedan,Blue
