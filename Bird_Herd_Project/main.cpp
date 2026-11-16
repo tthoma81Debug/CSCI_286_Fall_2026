@@ -100,6 +100,7 @@ int main()
     string lineFromSightings;
     string enteredPlate;
     string fieldFromLine;
+    string timestamp;
     int totalPlateMatches = 0;
 
     //check to make sure we actually found the file.
@@ -127,6 +128,9 @@ int main()
             //found a match
             cout << "Plate found! \n";
             totalPlateMatches++;
+
+            timestamp = getPart(lineFromSightings, 1);
+
         }
         else
         {
