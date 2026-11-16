@@ -100,6 +100,7 @@ int main()
     string lineFromSightings;
     string enteredPlate;
     string fieldFromLine;
+    int totalPlateMatches = 0;
 
     //check to make sure we actually found the file.
     if (!input) {
@@ -115,16 +116,17 @@ int main()
 
     //if we get this far... then lets read the first line
     while (getline(input, lineFromSightings)) {
-        cout << lineFromSightings << '\n';
+        //cout << lineFromSightings << '\n';
        
-        fieldFromLine = getPart(lineFromSightings, 5);
+        fieldFromLine = getPart(lineFromSightings, 4);
 
-        cout << "Just extracted fieldFromLine " << fieldFromLine << "\n";
+        //cout << "Just extracted fieldFromLine " << fieldFromLine << "\n";
 
         if(fieldFromLine == enteredPlate)
         {
             //found a match
-            cout << "Plate found!";
+            cout << "Plate found! \n";
+            totalPlateMatches++;
         }
         else
         {
@@ -136,9 +138,9 @@ int main()
         
     
     
-    }
+    } //end loop
 
-    
+    cout << "Found " << totalPlateMatches << " total plate matches \n";
 
 
     return 0;
