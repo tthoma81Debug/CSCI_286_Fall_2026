@@ -7,7 +7,9 @@ using namespace std;
 int main()
 {
     int integerArray[5];
-    int workshopParticipants;
+    int totalParticipants = 0;
+    double average;
+
     for(int i = 0; i < 5; i++)
     {
         do
@@ -17,8 +19,27 @@ int main()
         } 
         while (integerArray[i] > 40 || integerArray[i] < 0);
         
+    }//values are now all stored
+
+
+    //prints array and calculates total
+    for(int i = 0; i < 5; i++)
+    {
+        totalParticipants += integerArray[i];
+        cout << integerArray[i] << "\n"; //outputs contents of array.
+    }
+    cout << "Total Participants: " << totalParticipants << "\n";
+
+    //calculate average per workshop.
+    average = totalParticipants / 5.0;
+    cout << "Average is " << average << "\n";
+
+    
+    for(int i = 0; i < 5; i++)
+    {
 
     }
+
 
     return 0;
 }
