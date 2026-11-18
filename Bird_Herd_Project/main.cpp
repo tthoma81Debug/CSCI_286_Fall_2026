@@ -122,7 +122,7 @@ int main()
         fieldFromLine = getPart(lineFromSightings, 4);
 
         //cout << "Just extracted fieldFromLine " << fieldFromLine << "\n";
-
+        
         if(fieldFromLine == enteredPlate)
         {
             //found a match
