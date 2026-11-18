@@ -8,6 +8,7 @@ int main()
 {
     int integerArray[5];
     int totalParticipants = 0;
+    int totalWorkshopsWith25OrMore = 0;
     double average;
 
     for(int i = 0; i < 5; i++)
@@ -26,19 +27,20 @@ int main()
     for(int i = 0; i < 5; i++)
     {
         totalParticipants += integerArray[i];
+
+        if(integerArray[i] >= 25)
+        {
+            totalWorkshopsWith25OrMore++;
+        }
+
         cout << integerArray[i] << "\n"; //outputs contents of array.
     }
     cout << "Total Participants: " << totalParticipants << "\n";
+    cout << "Total Workshops 25 or More: " << totalWorkshopsWith25OrMore << "\n";
 
     //calculate average per workshop.
     average = totalParticipants / 5.0;
     cout << "Average is " << average << "\n";
-
-    
-    for(int i = 0; i < 5; i++)
-    {
-
-    }
 
 
     return 0;
